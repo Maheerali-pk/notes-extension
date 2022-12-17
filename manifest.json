@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "NotesExtension",
+  "description": "This extension will analyze a page using GTmetrix",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://web.whatsapp.com/"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.google.com/*"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "./test.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/assets/icons/logout-icon.svg",
+        "/assets/icons/edit-icon.svg",
+        "/assets/icons/notes-icon.svg",
+        "inject-store.js",
+        "assets/js/wapi.js",
+        "jscripts/content_script.js"
+      ],
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ]
+    }
+  ]
+}
